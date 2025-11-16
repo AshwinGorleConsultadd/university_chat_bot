@@ -601,6 +601,7 @@ function parseMarkdown(text) {
     // Unordered lists (- or *)
     html = html.replace(/^\s*[-*] (.+)$/gm, '<li>$1</li>');
     html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+  
 
     // Ordered lists (1. 2. 3.)
     html = html.replace(/^\s*\d+\.\s+(.+)$/gm, '<li>$1</li>');
@@ -722,6 +723,7 @@ KNOWLEDGE BASE:
 ${knowledgeBase}
 
 INSTRUCTIONS:
+0. (Important) a) give response in structured markdown text, b) give proper indentaction and newline character c) and also add bullet points when needed
 1. First, check if the answer is available in the KNOWLEDGE BASE above
 2. If the information is in the knowledge base, use it to answer the question accurately
 3. If the information is NOT in the knowledge base, use the UNIVERSITY CONTEXT to provide a relevant answer
@@ -729,6 +731,7 @@ INSTRUCTIONS:
 5. Be friendly, professional, and concise
 6. If you truly don't know something even with the context, politely say so and offer to help with something else
 7. Try to give answers in bullet point or lists when needed, example: if user ask list of courses then answre in bullet points.
+8. (priority) Try to answere in bullet points 
 User Question: ${userQuery}
 
 Please provide a helpful answer:`;
